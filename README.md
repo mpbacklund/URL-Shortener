@@ -4,7 +4,7 @@ This is a demo program I have written that mimics the function of tinyurl.com. I
 
 ## Starting the server
 
-To run this program, open your terminal and navigate to the file location. Then, type "python manage.py runserver". This will start the server. You can then navigate to "localhost:8000" in your browser to view the website. To close the server, return to your terminal and type ctrl+c. 
+To run this program, open your terminal and navigate to the file location. Then type `python manage.py runserver`. This will start the server. You can then navigate to "localhost:8000" in your browser to view the website. 
 
 ## Using the program
 
