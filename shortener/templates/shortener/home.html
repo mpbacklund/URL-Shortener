@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> URL Shortener </title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'shortener/style.css' %}">
+	</head>
+    <body>
+        <div class="white">
+		<h1>URL Shortener</h1>
+        <form action="{% url 'shortener:save' %}" method = 'post'>
+            {% csrf_token %}
+            <label for="url"> Type the full url of the website you want to be redirected to. </label>
+            <br>
+            <input id="url" name="url">
+            <br>
+            <label for="shortcut">Input what you would like the new url to be. If you don't care, leave this box blank. </label>
+            <br>
+            <input id="shortcut" name="shortcut">
+            <br>
+            <button id = "submit">Submit</button>
+        </form>
+        
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            {% endfor %}
+        <div>
+        {% endif %}
+        </div>
+	</body>
+</html>
